@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<!-- Press Alt + Shift + F for auto indention -->
+
+
+
+
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport">
+
+    <title>[title]</title>
+
+    <style>
+
+        body {
+
+            max-width: 1000px;
+
+            font: 18pt;
+
+            background-color: #161616;
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+        }
+
+
+
+        h1 {
+
+            background-color: #222222;
+
+            font-size: 25pt;
+
+            padding: 20pt;
+
+            border-radius: 7pt;
+
+            margin: 7pt auto;
+
+            text-shadow: 0px 0px 20pt white;
+
+            transition: font-size 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+
+        }
+
+
+
+        h1:hover {
+
+            font-size: 35pt;
+
+            text-shadow: 0px 0px 35pt white;
+
+        }
+
+
+
+        h2 {
+
+            background-color: #222222;
+
+            font-size: 20px;
+
+            padding: 10pt;
+
+            border-radius: 10pt;
+
+            margin: 5pt auto;
+
+            text-shadow: 0px 0px 15px white;
+
+        }
+
+
+
+
+
+        h3 {
+
+            background-color: #222222;
+
+            font-size: 20px;
+
+            padding: 10pt;
+
+            border-radius: 10pt;
+
+            margin: 10pt auto;
+
+            text-shadow: 0px 0px 15px white;
+
+        }
+
+
+
+        /* Windows devices */
+
+        @media screen and (-ms-high-contrast: active),
+
+        (-ms-high-contrast: none) {
+
+            h3 {
+
+                font-size: 35px;
+
+                /* Adjust the font size for Windows */
+
+            }
+
+        }
+
+
+
+        /* including mobile) */
+
+        @media screen {
+
+            h3 {
+
+                font-size: 25px;
+
+                /* Adjust the font size for other devices (mobile) */
+
+            }
+
+        }
+
+
+
+        h4 {
+
+            font-size: 20px;
+
+            padding: 5pt;
+
+            margin: 10pt auto;
+
+            text-shadow: 0px 0px 15px white;
+
+        }
+
+
+
+        h5 {
+
+            font-size: 20px;
+
+            margin: 10pt auto;
+
+            text-shadow: 0px 0px 15px white;
+
+        }
+
+
+
+        h6 {
+
+            font-size: 20px;
+
+            margin: 10pt auto;
+
+            text-shadow: 0px 0px 15px white;
+
+        }
+
+
+
+        input {
+
+            background-color: #222222;
+
+            font-size: 16px;
+
+            padding: 10pt;
+
+            border-radius: 10pt;
+
+            margin: 1pt auto;
+
+            text-shadow: 0px 0px 15px white;
+
+        }
+
+
+
+        p {
+
+            margin: 10pt auto;
+
+            font-size: 25px;
+
+            padding: 10pt;
+
+            text-shadow: 0px 0px 10px white;
+
+        }
+
+        div {
+
+            margin: 10pt auto;
+
+            font-size: 18pt;
+
+            text-shadow: 0px 0px 10px white;
+
+        }
+
+        button {
+
+            background-color: #007bff;
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 20px;
+
+            font-size: 16px;
+
+            border-radius: 25px;
+
+            text-shadow: 0px 0px 10px white;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+        }
+
+
+
+        button:hover {
+
+            background-color: #007bff;
+
+            box-shadow: 0px 0px 20px #58BDFF;
+
+        }
+
+
+
+        textarea {
+
+            background-color: transparent;
+
+            font-size: 16px;
+
+            padding: 10pt;
+
+            border-radius: 10pt;
+
+            margin: 1pt auto;
+
+            text-shadow: 0px 0px 50px white;
+
+            width: 100%;
+
+            height: 100px;
+
+        }
+
+
+
+        select {
+
+            padding: 6px;
+
+            border-radius: 10px;
+
+            background-color: #323232;
+
+            color: white;
+
+            font-size: 16px;
+
+            border: 2px solid gray;
+
+        }
+
+
+
+        select::-ms-expand {
+
+            display: none;
+
+        }
+
+
+
+        select::-webkit-select {
+
+            display: none;
+
+        }
+
+
+
+        input[type="checkbox"] {
+
+            cursor: pointer;
+
+            background: #323232;
+
+            box-shadow: 10px white;
+
+        }
+
+
+
+
+    </style>
+
+
+<h1>[title]</h1>
+<div style="
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;">
+  
+  <div>— Instruction —</div>
+  <textarea id="instructionEl" placeholder="Type an instruction here." style="
+width:450px;
+height:120px;" oninput="localStorage.instruction=this.value; generateBtn.textContent='generate';">[defaultInstruction]</textarea>
+  <script>if(localStorage.instruction) instructionEl.value = localStorage.instruction;</script>
+  
+  <div style="margin-top:0.5rem;">
+    <button id="generateBtn" onclick="responseEl.value=''; loaderEl.innerHTML=output.evaluateItem; continueBtn.disabled=false; this.textContent='regenerate';">generate</button>
+    <button disabled id="continueBtn" onclick="loaderEl.innerHTML=output.evaluateItem">continue</button>
+  </div>
+  <div id="loaderEl"></div>
+  
+  <div style="margin-top:0.5rem;">— Output —</div>
+  <textarea oninput="if(this.value.trim()=='') { continueBtn.disabled=true; generateBtn.textContent='generate'; } else { continueBtn.disabled=false; generateBtn.textContent='regenerate'; }" id="responseEl" placeholder="AI's output will show up here, and you can edit it. You can also type stuff here to ensure the output starts with specific text." style="width:450px; height:500px;"></textarea>
+
+</div>
