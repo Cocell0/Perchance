@@ -1,0 +1,337 @@
+:root {
+    --bg-dark: #101012;
+    --accent-1-dark: #181a26;
+    --accent-2-dark: #3b3b46;
+    --accent-3-dark: #2d2d44;
+    --accent-4-dark: #16191f;
+    --accent-1-light: #f4f4f4;
+    --accent-2-light: #e0e0e0;
+    --accent-3-light: #d2d2d2;
+    --accent-4-light: #f0f0f0;
+    --accent-5-light: #b5b5b5;
+    --accent-6-light: #5c5c5c;
+    --btn-light: #c3cad3;
+    --btn-dark: #2f3741;
+    --btn-dark-clicked: #475a7c;
+    --btn-light-clicked: #8a97a9;
+    --round: 15px;
+    --blue: #4cb7ff;
+    --dark-blue: #0080ff;
+}
+
+/* Track */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-blue);
+}
+
+/* Button */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Track piece */
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+/* Handle on scrollbar handle */
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+}
+
+.dark body {
+    background: var(--bg-dark);
+    color: white;
+}
+
+textarea {
+    padding: 10px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+button,
+input,
+select {
+    border: 2px transparent solid;
+    padding: 10px;
+    height: 40px;
+    background: var(--btn-light);
+    color: black !important;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dark button,
+input,
+select {
+    background: var(--btn-dark);
+    color: white !important;
+}
+
+button:active {
+    background: var(--btn-light-clicked);
+}
+
+.dark button:active {
+    background: var(--btn-dark-clicked);
+}
+
+input {
+    text-align: left;
+}
+
+input:focus {
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.promptCtn {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    padding-bottom: 5px;
+    max-height: 100%;
+    animation: entry 1s;
+}
+
+@keyframes entry {
+    0% {
+        bottom: -5000px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes attention {
+
+    0%,
+    80% {
+        box-shadow: 0 0 2px red;
+        background: red;
+    }
+
+    50% {
+        box-shadow: 0 0 8px red;
+    }
+
+    100% {
+        box-shadow: 0 0 0 red;
+    }
+}
+
+.promptCtnAlt {
+    border: 2px gray solid;
+    background: white;
+    border-radius: 1rem;
+    max-width: 700px;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    padding: 5px;
+    margin: 5px auto;
+}
+
+.dark .promptCtnAlt {
+    border: 2px var(--btn-dark) solid;
+    background: var(--bg-dark);
+}
+
+.promptCtnAlt input {
+    flex: 10;
+    background: transparent;
+    color: black !important;
+}
+
+.dark .promptCtnAlt input {
+    color: white !important;
+}
+
+.promptCtnAlt button {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.secondaryCtnPrompt {
+    padding: 5px;
+    gap: 5px;
+}
+
+.secondaryCtnPrompt button {
+    flex: 1;
+    margin: 0;
+}
+
+.OptionsCtn {
+    width: 100%;
+}
+
+.OptionsCtnAlt {
+    border: 2px gray solid;
+    background: white;
+    border-radius: 1rem;
+    max-width: 700px;
+    width: 100%;
+    max-height: 200px;
+    overflow: auto;
+    display: block;
+    padding: 5px;
+    margin: 5px auto;
+}
+
+.dark .OptionsCtnAlt {
+    border: 2px var(--btn-dark) solid;
+    background: var(--bg-dark);
+}
+
+.optionGrid {
+    background: var(--accent-3-light);
+    display: flex;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+    margin: 5px auto;
+}
+
+.dark .optionGrid {
+    background: var(--btn-dark);
+}
+
+.optionGrid label {
+    flex: 2;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.dark .optionGrid label {
+    color: white;
+}
+
+.optionGrid input {
+    flex: 5;
+    background: var(--accent-1-light);
+    color: black !important;
+}
+
+.optionGrid select {
+    flex: 5;
+    background: var(--accent-1-light);
+    color: black !important;
+}
+
+.dark .optionGrid button {
+    flex: 5;
+    background: var(--accent-1-dark);
+}
+
+.dark .optionGrid input {
+    flex: 5;
+    background: var(--accent-1-dark);
+    color: white !important;
+}
+
+.dark .optionGrid select {
+    flex: 5;
+    background: var(--accent-1-dark);
+    color: white !important;
+}
+
+.optionGrid button {
+    flex: 5;
+    background: var(--accent-1-light);
+}
+
+
+.outputImageCtn {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.outputImageCtnAlt {
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: block;
+    overflow: scroll;
+    padding: 5px;
+    margin: 5px auto;
+    margin-bottom: 40px;
+}
+
+.dark .outputImageCtn {
+    background: var(--bg-dark);
+    color: white;
+}
+
+.ebnCtn {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.ebnBody {
+    width: 100%;
+}
+
+.ebnCloseBtn {
+    position: fixed;
+    right: 0;
+    padding: 5px;
+    height: auto;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 0 0 8px #ff302c;
+}
+
+.ebnCloseBtn:active {
+    background: #ff302c;
+}
