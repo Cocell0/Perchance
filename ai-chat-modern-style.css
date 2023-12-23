@@ -1,3 +1,140 @@
+:root {
+    --bg-dark: #101012;
+    --accent-1-dark: #181a26;
+    --accent-2-dark: #3b3b46;
+    --accent-3-dark: #2d2d44;
+    --accent-4-dark: #16191f;
+    --general-round: 15px;
+    --blue: #4cb7ff;
+    --dark-blue: #0080ff;
+}
+
+/* Track */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-blue);
+}
+
+/* Button */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+    transition: background 0.5s;
+}
+
+/* Track piece */
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+    transition: background 0.5s;
+}
+
+.dark::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+/* Track piece */
+.dark::-webkit-scrollbar-track-piece {
+    background: var(--bg-dark);
+}
+
+/* Handle on scrollbar handle */
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+body {
+    margin: 0;
+    transition: background 0.5s, color 0.1s;
+}
+
+button {
+    color: white !important;
+    border: 2px transparent solid;
+    border-radius: 1000px;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    background: var(--accent-1-dark);
+    transition: box-shadow 0.5s;
+}
+
+.dark button {
+    border: 2px var(--blue) solid;
+    box-shadow: 0 0 8px #3898ff;
+}
+
+button:active {
+    background: var(--accent-2-dark);
+}
+
+.inputButtonsContainer {
+    color: white;
+    margin: 20px auto;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+textarea {
+    border: transparent;
+    padding: 10px !important;
+    border-radius: var(--general-round);
+    width: 95% !important;
+    box-shadow: 0 0 10px black;
+    transition: background 0.5s, color 0.1s, box-shadow 0.5s, text-shadow 0.5s;
+    resize: vertical;
+    margin: auto;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+input {
+    text-align: center;
+    border: transparent;
+    padding: 15px;
+    border-radius: 100px;
+    transition: background 0.5s, color 0.1s, box-shadow 0.5s, text-shadow 0.5s;
+    resize: vertical;
+    margin: 5px auto;
+}
+
+input:focus {
+    outline: none;
+}
+
+iframe {
+    border: none;
+}
+
+select {
+    padding: 5px;
+    border: initial;
+    border-radius: var(--general-round);
+    color: black;
+    box-shadow: 0 2px 10px #666666;
+    transition: background 0.5s, color 0.5s;
+}
+
+select:focus {
+    outline: none;
+}
+
 /*************/
 /* SPECIFIED */
 /*************/
