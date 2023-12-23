@@ -11,7 +11,7 @@ body {
 }
 
 a {
-    color: #ffcfcf;
+    color: #ffffff;
 }
 
 .page {
@@ -26,7 +26,8 @@ a {
 }
 
 .pageAlt {
-    border: 4px #859ab9 solid;
+    border: 4px #3a89ff solid;
+    box-shadow: inset 0 0 4px #3a89ff, 0 0 4px #3a89ff;
     background: linear-gradient(90deg, #4174d3, #183b7e);
     border-radius: 1rem;
     margin: auto;
