@@ -23,6 +23,7 @@ body {
 
 .pageAlt {
     border: 2px gray solid;
+    background: linear-gradient(90deg, #4174d3, #183b7e);
     border-radius: 1rem;
     margin: auto;
     padding: 10px;
