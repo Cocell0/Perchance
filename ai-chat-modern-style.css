@@ -1,0 +1,695 @@
+:root {
+    --bg-dark: #101012;
+    --accent-1-dark: #181a26;
+    --accent-2-dark: #3b3b46;
+    --accent-3-dark: #2d2d44;
+    --accent-4-dark: #16191f;
+    --general-round: 15px;
+    --blue: #4cb7ff;
+    --dark-blue: #0080ff;
+}
+
+/* Track */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-blue);
+}
+
+/* Button */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+    transition: background 0.5s;
+}
+
+/* Track piece */
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+    transition: background 0.5s;
+}
+
+.dark::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+/* Track piece */
+.dark::-webkit-scrollbar-track-piece {
+    background: var(--bg-dark);
+}
+
+/* Handle on scrollbar handle */
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+body {
+    margin: 0;
+    transition: background 0.5s, color 0.1s;
+}
+
+button {
+    color: white !important;
+    border: 2px transparent solid;
+    border-radius: 1000px;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    background: var(--accent-1-dark);
+    transition: box-shadow 0.5s;
+}
+
+.dark button {
+    border: 2px var(--blue) solid;
+    box-shadow: 0 0 8px #3898ff;
+}
+
+button:active {
+    background: var(--accent-2-dark);
+}
+
+.inputButtonsContainer {
+    color: white;
+    margin: 20px auto;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+textarea {
+    border: transparent;
+    padding: 10px !important;
+    border-radius: var(--general-round);
+    width: 95% !important;
+    box-shadow: 0 0 10px black;
+    transition: background 0.5s, color 0.1s, box-shadow 0.5s, text-shadow 0.5s;
+    resize: vertical;
+    margin: auto;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+input {
+    text-align: center;
+    border: transparent;
+    padding: 15px;
+    border-radius: 100px;
+    transition: background 0.5s, color 0.1s, box-shadow 0.5s, text-shadow 0.5s;
+    resize: vertical;
+    margin: 5px auto;
+}
+
+input:focus {
+    outline: none;
+}
+
+iframe {
+    border: none;
+}
+
+.container {
+    margin: 20px auto;
+    border: transparent;
+    border-radius: var(--general-round);
+    box-shadow: 0 2px 10px var(--accent-1-dark);
+    max-width: 750px;
+    max-height: 1200px;
+    width: 95% !important;
+    border: transparent;
+    padding: 15px;
+    transition: background 0.5s, color 0.1s, box-shadow 0.5s, text-shadow 0.5s;
+}
+
+.dark .container {
+    color: white;
+    box-shadow: 0 0 10px var(--accent-2-dark);
+    background: var(--accent-2-dark);
+}
+
+select {
+    padding: 5px;
+    border: initial;
+    border-radius: var(--general-round);
+    color: black;
+    box-shadow: 0 2px 10px #666666;
+    transition: background 0.5s, color 0.5s;
+}
+
+select:focus {
+    outline: none;
+}
+
+
+.dark {
+    color: white;
+    background: var(--bg-dark);
+}
+
+.dark input {
+    color: white;
+    box-shadow: 0 0 10px var(--accent-2-dark);
+    background: var(--accent-2-dark);
+}
+
+.dark select {
+    color: white;
+    box-shadow: 0 0 10px var(--accent-2-dark);
+    background: var(--accent-2-dark);
+}
+
+.dark textarea {
+    color: white;
+    box-shadow: 0 0 10px var(--accent-2-dark);
+    background: var(--accent-2-dark);
+}
+
+.dark .commentSection {
+    box-shadow: 0 0 10px var(--accent-2-dark);
+}
+
+.dark #auto-improve {
+    border: 1px #4cb7ff solid !important;
+}
+
+
+#userNameEl,
+#botNameEl {
+    max-width: 300px;
+    width: 95%;
+    box-shadow: 0 0 10px black;
+    margin: 10px auto;
+}
+
+.dark #userNameEl,
+#botNameEl {
+    box-shadow: 0 0 10px var(--accent-2-dark);
+}
+
+.content-wrapper {
+    border: transparent;
+    padding: 15px !important;
+    border-radius: var(--general-round) !important;
+    box-shadow: 0 2px 10px #666666;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#writingInstructionsEl {
+    margin-bottom: 16px;
+}
+
+#messageBox {
+    /* id="messageBox" search for "Write a message" get a textarea and above the textarea apply the id to the div element*/
+    margin-top: 25px !important;
+}
+
+#sendAsCharacterSelectEl {
+    color: white !important;
+    background: #353b40;
+    border-radius: 100px;
+    border: 1px #4cb7ff solid;
+    box-shadow: 0 0 0;
+    padding: 5px;
+    transition: box-shadow 0.5s ease, filter 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+}
+
+#auto-improve {
+    /* id="auto-improve" search for "auto-improve" spot a span element and above it spot a input element and right above that spot a div element, apply the id to the div element*/
+    margin-top: -32px !important;
+    margin-right: 15px !important;
+    padding: 5px 10px 5px 10px !important;
+    box-shadow: none;
+    text-shadow: none;
+    color: white !important;
+    background: var(--accent-1-dark) !important;
+    border-radius: 100px !important;
+    transition: box-shadow 0.5s ease, filter 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+}
+
+#autoRespondCtn {
+    background: #353b40 !important;
+    border-radius: 100px !important;
+    color: white !important;
+    border: 1px #4cb7ff solid !important;
+    padding: 2px !important;
+    border-radius: 100px !important;
+    transition: box-shadow 0.5s ease, filter 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+}
+
+#chatLogsEl {
+    margin-bottom: 50px;
+}
+
+/* Comments Styles */
+.commentsContainer {
+    margin: auto;
+    max-width: 750px;
+    width: 95%;
+    background: var(--accent-2-dark);
+    box-shadow: 0 0 10px var(--accent-2-dark);
+    color: white;
+    padding: 10px;
+    border-radius: var(--general-round);
+}
+
+.commentArea {
+    border: 3px solid var(--accent-2-dark);
+    border-radius: 20px;
+    background: var(--accent-4-dark);
+    overflow: hidden;
+}
+
+.commentsContainer p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.commentsLabel {
+    font-weight: bolder;
+    font-size: 120%;
+    text-shadow: 0 0 5px var(--blue);
+    color: var(--blue);
+}
+
+.buttonContainer {
+    margin-top: 8px;
+    display: flex;
+    gap: 15px;
+}
+
+.buttonContainer button {
+    margin-bottom: 0;
+    flex: 1;
+    color: var(--blue) !Important;
+    border: 2px transparent solid;
+    font-weight: bolder;
+    font-size: 120%;
+    text-shadow: 0 0 5px var(--blue);
+    border-radius: 100px;
+    box-shadow: none;
+}
+
+.buttonContainer button:active {
+    background: var(--accent-3-dark);
+}
+
+
+/* Canvas Styles */
+.enfiContainer {
+    margin: 10px auto;
+    display: flex;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+.enfiContainer button {
+    flex: 1;
+    border: none;
+    color: white;
+    border-radius: 0;
+    transition: font-size 0.5s, padding 0.5s;
+    box-shadow: none;
+}
+
+.enfiContainer button:active {
+    border: none;
+    background: var(--accent-3-dark);
+}
+
+@media(max-width: 600px) {
+    .enfiContainer button {
+        font-size: 13px;
+        padding: 4px;
+    }
+}
+
+@media(max-width: 400px) {
+    .enfiContainer button {
+        font-size: 10px;
+        padding: 0;
+    }
+}
+
+@media(max-width: 300px) {
+    .enfiContainer button {
+        font-size: 3px;
+        padding: 0;
+    }
+}
+
+.tldraw-iframe-wrapper {
+    border-radius: var(--general-round);
+    overflow: hidden;
+}
+
+.tldraw-iframe-wrapper button {
+    top: 50px !important;
+    left: 0 !important;
+    border-radius: 0 100px 100px 0;
+    width: 42px;
+    color: black;
+    box-shadow: none;
+    opacity: 0.25;
+}
+
+.tldraw-iframe-wrapper button:active {
+    box-shadow: none;
+    background: var(--accent-3-dark);
+}
+
+
+/* Abomination's Styles */
+.cubeContainer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+    perspective: 800px;
+}
+
+.cube {
+    margin-top: -10in;
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    transform-style: preserve-3d;
+    animation: spin 20s linear infinite;
+}
+
+.face {
+    margin: 30px;
+    position: absolute;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 123, 255, 0.7);
+    border: 2px solid white;
+}
+
+.face:nth-child(1) {
+    transform: translateZ(100px);
+}
+
+.face:nth-child(2) {
+    transform: rotateY(90deg) translateZ(100px);
+    background: rgba(40, 167, 69, 0.7);
+}
+
+.face:nth-child(3) {
+    transform: rotateY(180deg) translateZ(100px);
+    background: rgba(255, 193, 7, 0.7);
+}
+
+.face:nth-child(4) {
+    transform: rotateY(-90deg) translateZ(100px);
+    background: rgba(220, 53, 69, 0.7);
+}
+
+.face:nth-child(5) {
+    transform: rotateX(90deg) translateZ(100px);
+    background: rgba(108, 117, 125, 0.7);
+}
+
+.face:nth-child(6) {
+    transform: rotateX(-90deg) translateZ(100px);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes spin {
+
+    0%,
+    100% {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+
+    16.666% {
+        transform: rotateX(90deg) rotateY(0) rotateZ(0);
+    }
+
+    33.333% {
+        transform: rotateX(90deg) rotateY(0) rotateZ(90deg);
+    }
+
+    50% {
+        transform: rotateX(90deg) rotateY(0) rotateZ(90deg);
+    }
+
+    66.666% {
+        transform: rotateX(90deg) rotateY(90deg) rotateZ(90deg);
+    }
+
+    83.333% {
+        transform: rotateX(90deg) rotateY(90deg) rotateZ(180deg);
+    }
+}
+
+
+/* Ai Image Styles */
+.aiImage {
+    margin: auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.outputImageContainer {
+    display: block;
+    justify-content: center;
+    height: 80vh;
+    overflow: scroll;
+    background: var(--accent-1-dark);
+    border-radius: var(--general-round);
+}
+
+.imageOutputGridLine {
+    display: flex;
+    justify-content: center;
+}
+
+.imageOutputResult {
+    margin: 5px;
+}
+
+.promptContainer {
+    padding: 2px;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    border-radius: 30px;
+    padding: 5px;
+    background: var(--accent-1-dark);
+}
+
+.promptPlaceholder {
+    flex: 10;
+    display: block;
+    padding: 5px;
+    border-radius: 30px;
+    background: white;
+    transition: background 0.5s;
+}
+
+.promptPlaceholder input {
+    width: 100%;
+    display: block;
+    box-shadow: none;
+}
+
+.promptPlaceholder input {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    box-shadow: none;
+}
+
+.promptOptionPlaceholder {
+    padding: 5px;
+    display: flex;
+    /*background: blue;*/
+}
+
+.dark .promptPlaceholder {
+    background: var(--accent-2-dark);
+}
+
+.promptOptionPlaceholder button {
+    margin: 5px auto;
+    padding: 15px;
+    border: 0 solid transparent;
+    box-shadow: none;
+}
+
+.promptSecondaryOptionPlaceholder {
+    margin: 5px auto;
+    border-radius: 30px;
+    justify-content: right;
+    display: flex;
+    background: var(--accent-1-dark);
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+}
+
+.promptSecondaryOptionPlaceholder select {
+    box-shadow: none;
+    border-radius: 100px;
+    padding: 15px;
+    box-shadow: none;
+}
+
+.promptSecondaryOptionPlaceholder input {
+    box-shadow: none;
+    margin: 0;
+}
+
+.pseudoMargin {
+    flex: 10;
+}
+
+
+@media (max-width: 1200px) {
+    .imageOutputGridLine {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .promptSecondaryOptionPlaceholder {
+        display: block;
+        border-radius: 30px;
+        padding: 5px;
+    }
+
+    .promptSecondaryOptionPlaceholder select,
+    input {
+        margin: 0;
+        margin-bottom: 5px;
+        width: 100%;
+        box-shadow: none;
+        text-align: center;
+    }
+
+    .pseudoMargin {
+        display: none;
+    }
+
+}
+
+
+/* Ui Bar Styles */
+body {
+    margin: 0;
+}
+
+.uiBar {
+    position: fixed;
+    bottom: 0;
+    padding: 0;
+    background: #0d0e14;
+    border-radius: 30px 30px 0 0;
+    border: 2px transparent solid;
+    color: white;
+    width: 100%;
+    gap: 5px;
+    transition: right 0.5s, bottom 0.5s, border-radius 1.5s, box-shadow 1.5s;
+    transition-delay: 0s, 1s, 1s;
+    z-index: 10000;
+}
+
+.dark .uiBar {
+    border: 2px #3898ff solid;
+    box-shadow: 0 0 10px #3898ff;
+}
+
+.uiBarAlt {
+    border-radius: var(--general-round);
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    display: flex;
+    background: transparent;
+    transition: right 0.5s, bottom 0.5s, border-radius 1.5s, padding 1s;
+    transition-delay: 0s, 0s, 2s, 3s;
+}
+
+.uiButtonsContainer {
+    padding: 4px;
+    display: flex;
+    flex: 10;
+    gap: 5px;
+    border-radius: var(--general-round);
+}
+
+.uiBar button {
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--general-round);
+    color: white;
+    background: transparent;
+    flex: 1;
+    user-select: none;
+    transition: border-radius 1s;
+    box-shadow: none;
+}
+
+.uiBar button:hover {
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.uiBar button:active {
+    background: #1d2336;
+    box-shadow: none;
+}
+
+.uiExtraContainer {
+    border-radius: var(--general-round);
+    display: flex;
+    flex: 1;
+    gap: 5px;
+}
+
+
+@media(min-width: 550px) {
+    .uiBar {
+        bottom: 10px;
+        right: 10px;
+        border-radius: 1000px;
+        width: auto;
+    }
+
+    .uiBar button {
+        border-radius: 1000px;
+        padding: 10px;
+    }
+
+    .uiBarAlt {
+        padding: 5px;
+        border-radius: 1000px;
+    }
+}
