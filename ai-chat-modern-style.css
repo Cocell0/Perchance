@@ -52,8 +52,7 @@
 }
 
 
-#userNameEl,
-#botNameEl {
+#userNameEl, #botNameEl {
     max-width: 300px;
     width: 95%;
     box-shadow: 0 0 10px black;
