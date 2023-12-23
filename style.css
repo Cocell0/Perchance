@@ -26,9 +26,10 @@ a {
 }
 
 .pageAlt {
-    border: 4px #3a89ff solid;
-    box-shadow: inset 0 0 4px #3a89ff, 0 0 4px #3a89ff;
+    border: 2px #3a89ff solid;
+    box-shadow: inset 0 0 8px #3a89ff, 0 0 8px #3a89ff;
+    background: #3c485e);
     border-radius: 1rem;
     margin: auto;
-    padding: 10px;
+    padding: 20px;
 }
