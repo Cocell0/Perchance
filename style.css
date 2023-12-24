@@ -36,12 +36,15 @@ a {
 .siteList {
     border-radius: 0.5rem;
     border: 1px gray solid;
-    margin: 5px;
+}
+
+.siteList ul {
+    list-style-type: none;
 }
 
 .siteList li {
     border-radius: 0.5rem;
     border: 1px gray solid;
-    margin: 2px;
+    padding: 10px;
     background: #181818;
 }
