@@ -38,11 +38,7 @@ a {
     border: 1px gray solid;
 }
 
-.siteList ul {
-    list-style-type: none;
-}
-
-.siteList li {
+.siteList p {
     border-radius: 0.5rem;
     border: 1px gray solid;
     padding: 10px;
