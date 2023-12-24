@@ -48,11 +48,11 @@ h2 {
 .siteList {
     border-radius: 0.5rem;
     border: 1px gray solid;
-    padding: 5px;
+    padding: 10px;
 }
 
 .siteList p {
     border-radius: 0.5rem;
     padding: 10px;
-    background: #181818;
+    background: #252525;
 }
