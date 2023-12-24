@@ -11,7 +11,7 @@ body {
 }
 
 a {
-    color: #ffffff;
+    color: #ff9148;
 }
 
 .page {
@@ -26,9 +26,22 @@ a {
 }
 
 .pageAlt {
-    border: 2px gray solid;
-    background: #222222;
+    border: 1px gray solid;
+    background: #121214;
     border-radius: 1rem;
     margin: auto;
     padding: 20px;
+}
+
+.siteList {
+    border-radius: 0.5rem;
+    border: 1px gray solid;
+    margin: 5px;
+}
+
+.siteList li {
+    border-radius: 0.5rem;
+    border: 1px gray solid;
+    margin: 2px;
+    background: #181818;
 }
