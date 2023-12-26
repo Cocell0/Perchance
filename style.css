@@ -39,7 +39,7 @@ h2 {
 
 .pageAlt {
     border: 1px gray solid;
-    background: #121214;
+    background: linear-gradient(160deg, #303032, #202022, #080810);
     border-radius: 1rem;
     margin: auto;
     padding: 20px;
@@ -48,5 +48,5 @@ h2 {
 .siteList p {
     border-radius: 0.5rem;
     padding: 10px;
-    background: #252525;
+    background: #404040;
 }
