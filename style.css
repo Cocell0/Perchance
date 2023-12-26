@@ -42,6 +42,7 @@ h2 {
     background: linear-gradient(160deg, #303032, #202022, #080810);
     border-radius: 1rem;
     margin: auto;
+    text-align: justify;
     padding: 20px;
 }
 
