@@ -38,21 +38,22 @@
 
 .postDescription {
     padding: 10px;
-    max-height: 200px;
+    max-height: 400px;
     overflow-y: scroll;
     position: relative;
     text-align: justify;
 }
 
-.datePostCtn {
-    background: #202022;
-    padding: 10px;
+.postDescription img {
+    width: 100%;
 }
 
 .datePost {
-    border-radius: 0.8rem 0 0 0;
+    border-radius: 0 0.8rem 0 0;
     border: 2px gray solid;
     border-bottom: none;
-    border-right: none;
+    border-left: none;
     padding: 8px;
+    max-width: 200px;
+    width: fit-content;
 }
