@@ -1,0 +1,62 @@
+.postCtn {
+    width: 100%;
+    max-height: 80vh;
+    height: 100%;
+    background: black;
+    overflow-y: scroll;
+}
+
+.postEn {
+    padding: 10px;
+    padding-bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.postBubble {
+    max-width: 700px;
+    width: 100%;
+    background: #121215;
+    color: white;
+    border-radius: 1rem;
+    border: 2px gray solid;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.postTitle {
+    background: #202022;
+    padding: 10px;
+    border-bottom: 1px transparent solid;
+    text-align: left;
+}
+
+.postTitle h1 {
+    margin: 0;
+}
+
+.postDescription {
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: scroll;
+    position: relative;
+    text-align: justify;
+}
+
+.datePostCtn {
+    background: #202022;
+    padding: 10px;
+}
+
+.datePost {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 0.8rem 0 0 0;
+    border: 2px gray solid;
+    border-bottom: none;
+    border-right: none;
+    padding: 8px;
+}
