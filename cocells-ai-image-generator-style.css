@@ -1,3 +1,6 @@
+* {
+    transition: padding 0.5s, border-radius 0.5s, white-space 0.5s, display 0.5s, position 0.5s, height 0.5s, margin 0.5s, gap 0.5s;
+}
 :root {
     --bg-dark: #101012;
     --accent-1-dark: #181a26;
@@ -26,13 +29,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--blue);
+    background: var(--accent-5-light);
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--dark-blue);
+    background: var(--accent-6-light);
 }
 
 /* Button */
@@ -61,7 +64,9 @@ body {
     width: 100%;
     background: white;
 }
-
+.dark a {
+    color: #ffa000;
+}
 .dark body {
     background: var(--bg-dark);
     color: white;
@@ -73,6 +78,10 @@ textarea {
 
 textarea:focus {
     outline: none;
+}
+
+button {
+    user-select: none;
 }
 
 button,
@@ -161,7 +170,6 @@ img {
     height: 40px;
     width: 40px;
     padding: 0;
-    margin-left: 5px;
 }
 
 .secondaryCtnPrompt {
@@ -253,6 +261,15 @@ img {
     background: var(--accent-1-light);
 }
 
+.promptBtnSmallScreen {
+    display: flex;
+    gap: 5px;
+}
+
+.secondaryBtnMbol {
+    width: 100%;
+    gap: 5px;
+}
 
 .outputImageCtn {
     position: fixed;
@@ -309,6 +326,41 @@ img {
     background: #ff302c;
 }
 
+.atnCtn {
+    text-align: justify;
+    border-radius: 1rem;
+    padding: 10px;
+    border: 2px #cdd9f5 solid;
+    max-width: 700px;
+    margin: auto;
+    width: 100%;
+    margin: 10px auto;
+    background: #f3f6fd;
+}
+
+.dark .atnCtn {
+    border-color: #282830;
+    background: #161618;
+}
+
+.atnCtn blockquote {
+    border-left: 15px #2b7aff solid;
+    margin-left: 10px;
+    border-radius: 0.8rem;
+    padding: 10px;
+    padding-left: 15px;
+    background: #b9d3ff;
+    margin: 10px auto;
+}
+
+.dark .atnCtn blockquote {
+    color: black;
+}
+
+.dark .atnCtn blockquote a {
+    color: red;
+}
+
 /**************/
 /* Animations */
 /**************/
@@ -341,5 +393,61 @@ img {
 
     100% {
         box-shadow: 0 0 0 red;
+    }
+}
+
+/**********/
+/* Medias */
+/**********/
+@media (max-width: 400px) {
+    .promptCtnAlt {
+        display: block;
+        
+    }
+
+    .promptCtnAlt input {
+        width: 100%;
+        margin: 0;
+    }
+
+    .promptCtnAlt button {
+        margin: 0;
+        width: 100%;
+        animation: none !important;
+        border-radius: 0;
+    }
+
+    .promptBtnSmallScreen {
+        display: flex;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        gap: 0;
+    }
+    
+    .secondaryBtnMbol {
+        gap: 0;
+    }
+    
+    .OptionsCtnAlt {
+        padding: 0;
+    }
+    
+    .optionGrid {
+        margin: 0;
+        border-radius: 0;
+    }
+}
+@media (max-width: 300px){
+    .promptBtnSmallScreen {
+        border-radius: 0;
+    }
+    
+    .promptCtnAlt {
+        padding: 0;
+        
+    }
+
+    .promptCtnAlt button {
+        padding: 0;
     }
 }
