@@ -1,5 +1,5 @@
 * {
-    transition: padding 0.5s, border-radius 0.5s, white-space 0.5s, display 0.5s, position 0.5s, height 0.5s, margin 0.5s, gap 0.5s;
+    transition: padding 0.5s, border-radius 0.5s, white-space 0.5s, display 0.5s, position 0.5s, height 0.5s, margin 0.5s, gap 0.5s, font-size 0.5s;
 }
 :root {
     --bg-dark: #101012;
@@ -74,6 +74,8 @@ body {
 
 textarea {
     padding: 10px;
+    border-radius: 0.5rem;
+    border: none;
 }
 
 textarea:focus {
@@ -228,30 +230,31 @@ img {
 }
 
 .optionGrid input {
+    display: flex;
     flex: 5;
     background: var(--accent-1-light);
     color: black !important;
+    width: 100%;
 }
 
 .optionGrid select {
+    display: flex;
     flex: 5;
     background: var(--accent-1-light);
     color: black !important;
+    width: 100%;
 }
 
 .dark .optionGrid button {
-    flex: 5;
     background: var(--accent-1-dark);
 }
 
 .dark .optionGrid input {
-    flex: 5;
     background: var(--accent-1-dark);
     color: white !important;
 }
 
 .dark .optionGrid select {
-    flex: 5;
     background: var(--accent-1-dark);
     color: white !important;
 }
@@ -261,6 +264,26 @@ img {
     background: var(--accent-1-light);
 }
 
+.notepadCtn {
+    display: block;
+}
+
+.notepadCtn label {
+    display: block;
+}
+
+.notepadCtn textarea {
+    background: var(--accent-1-light);
+    width: 100%;
+    height: 200px;
+    resize: none;
+}
+
+.dark .notepadCtn textarea {
+    background: var(--accent-1-dark);
+    color: white;
+}
+/* *************************************** */
 .promptBtnSmallScreen {
     display: flex;
     gap: 5px;
@@ -360,7 +383,6 @@ img {
 .dark .atnCtn blockquote a {
     color: red;
 }
-
 /**************/
 /* Animations */
 /**************/
@@ -428,6 +450,11 @@ img {
         gap: 0;
     }
     
+    .secondaryBtnMbol button {
+        padding: 0;
+        font-size: 0.6rem;
+    }
+    
     .OptionsCtnAlt {
         padding: 0;
     }
@@ -435,9 +462,18 @@ img {
     .optionGrid {
         margin: 0;
         border-radius: 0;
+        display: block;
+        text-align: left;
+    }
+    
+    .optionGrid input {
+        margin-top: 10px;
     }
 }
 @media (max-width: 300px){
+    .outputImageContainer {
+        font-size: 0.8rem;
+    }
     .promptBtnSmallScreen {
         border-radius: 0;
     }
@@ -449,5 +485,31 @@ img {
 
     .promptCtnAlt button {
         padding: 0;
+    }
+}
+  
+@media (max-width: 240px){ 
+    .promptCtn {
+        padding: 0;
+    }
+    
+    .promptCtnAlt {
+        border-radius: 0;
+        margin: 0;
+    }
+    
+    .secondaryBtnMbol {
+        display: block;
+        height: 50px;
+        overflow: scroll;
+    }
+    .secondaryBtnMbol button {
+        margin: 0;
+        font-size: 1rem;
+    }
+    
+    .OptionsCtnAlt {
+        border-radius: 0;
+        margin: 0;
     }
 }
