@@ -1,0 +1,35 @@
+/* Track */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--accent-5-light);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-6-light);
+}
+
+/* Button */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Track piece */
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+/* Handle on scrollbar handle */
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
