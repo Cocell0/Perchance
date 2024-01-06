@@ -1,0 +1,313 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!-- <link rel="preload" as="style"onload="this.onload=null;this.rel='stylesheet'" href="https://cocell0.github.io/Perchance/cocells-ai-image-generator-style.css"> -->
+<script src="https://kit.fontawesome.com/dd1238c4ee.js" crossorigin="anonymous"></script>
+
+<style>
+  :root {
+    --primary: #5c6a81;
+    --secondary: #d3dade;
+    --secondaryDark: #a9b7be;
+    --tertiary: #cfd3e2;
+    --transBg: #FFFFFF50;
+  }
+  
+  body {
+    margin: 0;
+    height: 100%;
+  }
+  
+  button {
+    padding: 10px;
+    border-radius: 0.5rem;
+    background: var(--secondary);
+    border: none;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  button:active {
+    background: var(--secondaryDark);
+  }
+  
+  input {
+    border-radius: 0.5rem;
+    border: none;
+    background: var(--secondary);
+    padding: 10px;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+</style>
+<style>
+  .transBg {
+    background: transparent;
+  }
+  
+  .fullHeight {
+    height: 100%;
+  }
+  
+  .overHidden {
+    overflow: hidden;
+  }
+  
+  .round1 {
+    border-radius: 1rem;
+  }
+  
+  .round08 {
+    border-radius: 0.8rem;
+  }
+  
+  .round05 {
+    border-radius: 0.5rem;
+  }
+  
+  .pad10 {
+    padding: 10px;
+  }
+  
+  .pad8 {
+    padding: 8px;
+  }
+  
+  .pad5 {
+    padding: 5px;
+  }
+  
+  .flexR {
+    display: flex;
+  }
+  
+  .flexC {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+<style>
+  .iBody {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh !important;
+  }
+  
+  .iTBody {
+    flex: 10;
+  }
+  
+  .iBBody {
+    backdrop-filter: blur(10px);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .prmCtn {
+    max-width: 700px;
+    margin: 5px auto;
+    border: 2px solid var(--primary);
+    background: var(--transBg);
+  }
+  
+  .prmPrime {
+    gap: 5px;
+  }
+  
+  .prmPrime input {
+    flex: 10;
+  }
+  
+  .prmPrime button {
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+  }
+  
+@keyframes fadeIn {
+    0% {
+      display: none;
+      opacity: 0;
+      height: 0;
+      padding: 0;
+    }
+    100% {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      display: block;
+      opacity: 1;
+    }
+    100% {
+      display: none;
+      opacity: 0;
+      height: 0;
+      padding: 0;
+    }
+  }
+
+  .hidden {
+    animation-name: fadeOut;
+  }
+
+  .visible {
+    animation-name: fadeIn;
+  }
+    
+  #settingsCtn {
+    display: none;
+    animation-duration: 0.1s;
+    max-height: 50vh;
+    overflow-y: scroll;
+  }
+</style>
+
+<h1 style="display: none;">[$meta.title]</h1>
+
+<div class="iBody transBg fullHeight">
+  <!-- Body Start >>> -->
+  <!-- Top >>> -->
+  <div class="iTBody transBg fullHeight">
+    <div class="overHidden transBg">
+      <div class="overHidden transBg">
+        <div class="overHidden transBg">
+          [chat(chatOne)]
+        </div>
+        <div style="height: 150px;"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Top <<< -->
+  <!-- Bottom >>> -->
+  <div class="iBBody transBg">
+    <div class="overHidden transBg">
+      <div class="overHidden transBg">
+        <div class="overHidden transBg">
+          <!-- Start >>> -->
+          <div class="prmCtn prmPrime flexR pad5 round1">
+            <input type="text">
+            <button><i class="fa-solid fa-plus fa-xl"></i></button>
+            <button id="settingBtnToggle"><i class="fa-solid fa-gear fa-xl"></i></button>
+          </div>
+          <div id="settingsCtn" class="prmCtn pad5 round1">
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            <p>FD</p>
+            
+          </div>
+          <!-- End <<< -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom <<< -->
+  <!-- Body End <<< -->
+</div>
+
+
+<script>
+  let settingBtnToggle = document.getElementById("settingBtnToggle");
+  let settingsCtn = document.getElementById("settingsCtn");
+
+  settingBtnToggle.addEventListener("click", function () {
+    if (settingsCtn.classList.contains("visible")) {
+      settingsCtn.classList.remove("visible");
+      settingsCtn.classList.add("hidden");
+      settingsCtn.style.display = "none";
+    } else {
+      settingsCtn.classList.remove("hidden");
+      settingsCtn.classList.add("visible");
+      settingsCtn.style.display = "block";
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script> // Darkmode
+  function darkmode() {
+        const body = document.body;
+        body.classList.toggle('dark');
+        const isDarkModeEnabled = body.classList.contains('dark');
+        localStorage.setItem('darkMode', isDarkModeEnabled);
+    }
+
+    window.onload = function () {
+
+        const savedDarkMode = localStorage.getItem('darkMode');
+        const body = document.body;
+
+
+        if (savedDarkMode === null) {
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Apply dark mode based on browser preference
+            if (prefersDarkMode) {
+                body.classList.add('dark');
+                localStorage.setItem('darkMode', true);
+            }
+        } else {
+            // If dark mode is set in local storage, apply it
+            if (savedDarkMode === 'true') {
+                body.classList.add('dark');
+            }
+        }
+    }; 
+</script>
