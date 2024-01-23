@@ -1,29 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perchance</title>
-    <link rel="stylesheet" href="style.css">
-    <meta author="Cocell">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <meta author="Cocell" />
+  </head>
 
-<body>
+  <body>
     <div class="page">
-        <div class="pageEn">
-            <div class="pageAlt">
-                <h1>Perchance</h1>
-                <p>This is a personal project, I use this for CDN (Content Delivery Network) so I don't have any use of
-                    this page, other than file hosting.</p>
-                <p><a href="mailto:cocell.bd@gmail.com">Contact me through email, if you want.</a></p>
-                <div class="siteList">
-                    <h2>This page serves the following sites as a CDN:</h2>
-                    <p><a href="https://perchance.org/cocells-ai-image-generator">Cocell's Ai Image Generator -
-                            Perchance</a></p>
-                    <p><a href="https://perchance.org/ai-chat-modern">Ai Chat Modern - Perchance</a></p>
-                </div>
-            </div>
+      <div class="pageEn">
+        <div class="pageAlt">
+          <h1>Perchance</h1>
+          <p>
+            This is a personal project, I use this for CDN (Content Delivery
+            Network) so I don't have any use of this page, other than file
+            hosting.
+          </p>
+          <p>
+            <a href="mailto:cocell.bd@gmail.com"
+              >Contact me through email, if you want.</a
+            >
+          </p>
+          <div class="siteList">
+            <h2>This page serves the following sites as a CDN:</h2>
+            <p>
+              <a href="https://perchance.org/cocells-ai-image-generator"
+                >Cocell's Ai Image Generator - Perchance</a
+              >
+            </p>
+            <p>
+              <a href="https://perchance.org/ai-chat-modern"
+                >Ai Chat Modern - Perchance</a
+              >
+            </p>
+          </div>
         </div>
+      </div>
     </div>
-</body>
+    <script>
+      const owner = "Cocell0";
+      const repo = "Perchance";
+      const path = "";
+
+      const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+
+      function fetchFileLinks(apiUrl) {
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            const files = [];
+            data.forEach((entry) => {
+              if (entry.type === "file") {
+                files.push(entry.download_url || entry.html_url);
+              } else if (entry.type === "dir") {
+                const dirUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${entry.path}`;
+                files.push(...fetchFileLinks(dirUrl));
+              }
+            });
+            return files;
+          })
+          .catch((error) => console.error("Error fetching files:", error));
+      }
+
+      const fileLinks = fetchFileLinks(apiUrl);
+      console.log("File Links:", fileLinks);
+    </script>
+  </body>
 </html>
