@@ -307,14 +307,18 @@ function processReadMoreElements() {
             toggleButton.textContent = 'Show More';
             toggleButton.style.cursor = 'pointer';
             toggleButton.style.border = 'none';
-            toggleButton.style.background = '#D8D8D8 !important';
-            toggleButton.style.color = 'black !important';
             toggleButton.style.textAlign = 'center';
             toggleButton.style.textDecoration = 'none';
             toggleButton.style.display = 'inline';
             toggleButton.style.padding = '2px';
             toggleButton.style.borderRadius = '4px';
 
+            toggleButton.style.cssText += `
+                background: #D8D8D8 !important;
+                color: black !important;
+            `;
+
+            
             toggleButton.addEventListener('click', () => {
                 remainingSpan.style.display = remainingSpan.style.display === 'none' ? 'inline' : 'none';
                 toggleButton.textContent = remainingSpan.style.display === 'none' ? 'Show More' : 'Show Less';
