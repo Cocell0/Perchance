@@ -307,7 +307,7 @@ function processReadMoreElements() {
             toggleButton.textContent = 'Show More';
             toggleButton.style.cursor = 'pointer';
             toggleButton.style.border = 'none';
-            toggleButton.style.backgroundColor = '#D8D8D8 !important';
+            toggleButton.style.background = '#D8D8D8 !important';
             toggleButton.style.color = 'black !important';
             toggleButton.style.textAlign = 'center';
             toggleButton.style.textDecoration = 'none';
