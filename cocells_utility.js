@@ -22,7 +22,7 @@ function tabFunc(event, tabName) {
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    var window = elmnt.querySelector(".dragElWind");
+    var dragWindow = elmnt.querySelector(".dragElWind");
     var header = elmnt.querySelector(".dragElHeader");
     var main = elmnt.querySelector(".dragElMain");
 
@@ -39,7 +39,7 @@ function dragElement(elmnt) {
     header.style.position = 'sticky';
     header.style.top = 0;
     header.style.zIndex = 1;
-    window.style.transition = 'width 0s, height 0s';
+    dragWindow.style.transition = 'width 0s, height 0s';
 
     function createOverlay() {
         var overlay = document.createElement("div");
