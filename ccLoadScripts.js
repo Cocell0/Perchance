@@ -1,4 +1,4 @@
-function loadScripts(scriptUrls) {
+function ccLoadScripts(...scriptUrls) {
   scriptUrls.forEach(function(scriptUrl, index) {
     // Append timestamp
     var versionedUrl = scriptUrl + '?v=' + new Date().getTime();
@@ -25,7 +25,7 @@ function loadScripts(scriptUrls) {
         // Append the script
         document.head.appendChild(script);
 
-        // To handle commma separated scripts
+        // To handle comma-separated scripts
         if (index < scriptUrls.length - 1) {
           document.head.appendChild(document.createTextNode(','));
         }
@@ -43,4 +43,3 @@ function hashCode(str) {
   }
   return hash;
 }
-]);
