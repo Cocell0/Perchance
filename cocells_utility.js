@@ -1,3 +1,25 @@
+function tabFunc(event, tabName) {
+  var i, tabWindow, tablinks;
+
+  // Hide all tab windows
+  tabWindow = document.getElementsByClassName("tabWindow");
+  for (i = 0; i < tabWindow.length; i++) {
+    tabWindow[i].style.display = "none";
+  }
+
+  // Remove the "openedTab" class from all tab links
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("openedTab");
+  }
+
+  // Display the selected tab window
+  document.getElementById(tabName).style.display = "block";
+
+  // Add the "openedTab" class to the clicked tab link
+  event.currentTarget.classList.add("openedTab");
+}
+
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     var header = elmnt.querySelector(".dragElHeader");
