@@ -276,7 +276,6 @@ function fullscreen() {
 
             modalContainer.style.maxWidth = '80%';
             modalContainer.style.maxHeight = '80%';
-            modalContainer.style.overflow = 'hidden';
             modalContainer.style.transform = 'scale(0)';
             modalContainer.style.transition = 'transform 0.25s';
 
