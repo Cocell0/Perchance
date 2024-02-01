@@ -357,6 +357,8 @@ function processReadMoreElements() {
 
 processReadMoreElements();
 
+
+// Copy Text OnClick Function
 function copyText(copyEl) {
   let textToCopy;
 
@@ -391,6 +393,7 @@ function copyText(copyEl) {
   console.log(`Text copied to clipboard: ${textToCopy}`);
 }
 
+// Close Elements Function
 function closeEl(element) {
   if (element === undefined || element === null) {
     const parent = this.parentElement;
@@ -416,4 +419,16 @@ function closeEl(element) {
       console.error("Parent element not found");
     }
   }
+}
+
+// Show Elements Function
+function showEl(elementId, displayValue = 'block') {
+  const element = document.getElementById(elementId);
+
+  if (!element) {
+    console.error(`Element with ID '${elementId}' not found`);
+    return;
+  }
+
+  element.style.display = displayValue;
 }
