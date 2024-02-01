@@ -227,85 +227,103 @@ function fullscreen() {
     }
 }
 
-(function() {
-    var modalImages = document.querySelectorAll('.modal-image');
+function openImageModal() {
+  var modalImages = document.querySelectorAll('.modal-image');
 
-    modalImages.forEach(function(modalImage) {
-        modalImage.style.cursor = 'pointer'; // Set cursor to pointer for modal images
+  modalImages.forEach(function(modalImage) {
+    modalImage.style.cursor = 'pointer'; // Set cursor to pointer for modal images
 
-        modalImage.addEventListener('click', function() {
-            var imageUrl = this.getAttribute('src');
+    modalImage.addEventListener('click', function() {
+      var imageUrl = this.getAttribute('src');
 
-            // Background container
-            var backgroundContainer = document.createElement('div');
-            backgroundContainer.className = 'modal-image-background-container';
+      // Background container
+      var backgroundContainer = document.createElement('div');
+      backgroundContainer.className = 'modal-image-background-container';
 
-            // Modal container
-            var modalContainer = document.createElement('div');
-            modalContainer.className = 'modal-image-container';
+      // Modal container
+      var modalContainer = document.createElement('div');
+      modalContainer.className = 'modal-image-container';
 
-            // Image element
-            var imageElement = document.createElement('img');
-            imageElement.src = imageUrl;
-            imageElement.alt = 'Modal Image';
+      // Image element
+      var imageElement = document.createElement('img');
+      imageElement.src = imageUrl;
+      imageElement.alt = 'Modal Image';
 
-            // Append image to modal container
-            modalContainer.appendChild(imageElement);
+      // Append image to modal container
+      modalContainer.appendChild(imageElement);
 
-            // Append modal container to background container
-            backgroundContainer.appendChild(modalContainer);
+      // Append modal container to background container
+      backgroundContainer.appendChild(modalContainer);
 
-            // Append background container to body
-            document.body.appendChild(backgroundContainer);
+      // Append background container to body
+      document.body.appendChild(backgroundContainer);
 
-            // Apply styles to the modal elements
-            backgroundContainer.style.display = 'flex';
-            backgroundContainer.style.position = 'fixed';
-            backgroundContainer.style.top = '0';
-            backgroundContainer.style.left = '0';
-            backgroundContainer.style.bottom = '0';
-            backgroundContainer.style.right = '0';
-            backgroundContainer.style.width = '100%';
-            backgroundContainer.style.height = '100%';
-            backgroundContainer.style.background = '#00000098';
-            backgroundContainer.style.justifyContent = 'center';
-            backgroundContainer.style.alignItems = 'center';
-            backgroundContainer.style.zIndex = '9999999999'; // I think I "should" lower this value
-            backgroundContainer.style.transition = 'background 0.5s';
-            backgroundContainer.style.cursor = 'zoom-out';
+      // Apply styles to the modal elements
+      backgroundContainer.style.display = 'flex';
+      backgroundContainer.style.position = 'fixed';
+      backgroundContainer.style.top = '0';
+      backgroundContainer.style.left = '0';
+      backgroundContainer.style.bottom = '0';
+      backgroundContainer.style.right = '0';
+      backgroundContainer.style.width = '100%';
+      backgroundContainer.style.height = '100%';
+      backgroundContainer.style.background = '#00000098';
+      backgroundContainer.style.justifyContent = 'center';
+      backgroundContainer.style.alignItems = 'center';
+      backgroundContainer.style.zIndex = '9999999999'; // You might want to adjust this value
+      backgroundContainer.style.transition = 'background 0.5s';
+      backgroundContainer.style.cursor = 'zoom-out';
 
-            modalContainer.style.maxWidth = '80%';
-            modalContainer.style.maxHeight = '80%';
-            modalContainer.style.transform = 'scale(0)';
-            modalContainer.style.transition = 'transform 0.25s';
+      modalContainer.style.maxWidth = '80%';
+      modalContainer.style.maxHeight = '80%';
+      modalContainer.style.transform = 'scale(0)';
+      modalContainer.style.transition = 'transform 0.25s';
 
-            imageElement.style.width = '100%';
-            imageElement.style.height = 'auto';
-            imageElement.style.cursor = 'zoom-out';
+      imageElement.style.width = '100%';
+      imageElement.style.height = 'auto';
+      imageElement.style.cursor = 'zoom-out';
 
-            // Open modal with zoom effect
-            setTimeout(function() {
-                backgroundContainer.style.background = '#000000cc';
-                modalContainer.style.transform = 'scale(1.2)'; // Start with zoomed-in scale
-                setTimeout(function() {
-                    modalContainer.style.transform = 'scale(1)'; // Animate to normal scale
-                }, 180); // Adjust the time based on your preference
-            }, 10);
+      // Open modal with zoom effect
+      setTimeout(function() {
+        backgroundContainer.style.background = '#000000cc';
+        modalContainer.style.transform = 'scale(1.2)'; // Start with zoomed-in scale
+        setTimeout(function() {
+          modalContainer.style.transform = 'scale(1)'; // Animate to normal scale
+        }, 180); // Adjust the time based on your preference
+      }, 10);
 
+      // Close modal on background click with zoom out effect
+      backgroundContainer.addEventListener('click', closeModal);
 
-            // Close modal on background click with zoom out effect
-            backgroundContainer.addEventListener('click', function() {
-                backgroundContainer.style.background = '#00000000';
-                modalContainer.style.transform = 'scale(0)';
-                setTimeout(function() {
-                    backgroundContainer.style.display = 'none';
-                    // Remove the modal elements when the background is clicked
-                    document.body.removeChild(backgroundContainer);
-                }, 300);
-            });
-        });
+      // Close modal on Escape key press
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      });
+
+      // Prevent mouse scroll while the modal is open
+      document.body.style.overflow = 'hidden';
+
+      function closeModal() {
+        backgroundContainer.style.background = '#00000000';
+        modalContainer.style.transform = 'scale(0)';
+        setTimeout(function() {
+          backgroundContainer.style.display = 'none';
+          // Remove the modal elements when the background is clicked or Escape key is pressed
+          document.body.removeChild(backgroundContainer);
+        }, 300);
+
+        // Allow mouse scroll when the modal is closed
+        document.body.style.overflow = 'auto';
+      }
     });
-})();
+  });
+}
+
+// Call the function to set up modal functionality
+openImageModal();
+
 
 function processReadMoreElements() {
     const readMoreElements = document.querySelectorAll('[cc-read-more="true"]');
