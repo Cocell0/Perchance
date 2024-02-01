@@ -356,3 +356,64 @@ function processReadMoreElements() {
 }
 
 processReadMoreElements();
+
+function copyText(copyEl) {
+  let textToCopy;
+
+  if (copyEl === undefined || copyEl === null) {
+    console.error("Invalid element provided");
+    return;
+  }
+
+  if (typeof copyEl === 'string') {
+    const elementById = document.getElementById(copyEl);
+
+    if (!elementById) {
+      console.error(`Element with ID '${copyEl}' not found`);
+      return;
+    }
+
+    textToCopy = elementById.textContent || elementById.innerText;
+  } else if (copyEl instanceof Element) {
+    textToCopy = copyEl.textContent || copyEl.innerText;
+  } else {
+    console.error("Invalid parameter provided");
+    return;
+  }
+  
+  const tempTextarea = document.createElement("textarea");
+  tempTextarea.value = textToCopy;
+  document.body.appendChild(tempTextarea);
+  tempTextarea.select();
+  tempTextarea.setSelectionRange(0, 99999); /* For mobile devices */
+  document.execCommand("copy");
+  document.body.removeChild(tempTextarea);
+  console.log(`Text copied to clipboard: ${textToCopy}`);
+}
+
+function closeEl(element) {
+  if (element === undefined || element === null) {
+    const parent = this.parentElement;
+    if (parent) {
+      parent.style.display = "none";
+    } else {
+      console.error("Parent element not found");
+    }
+  } else if (typeof element === 'string') {
+    const elementById = document.getElementById(element);
+
+    if (!elementById) {
+      console.error(`Element with ID '${element}' not found`);
+      return;
+    }
+
+    elementById.style.display = "none";
+  } else {
+    const parent = element.parentElement;
+    if (parent) {
+      parent.style.display = "none";
+    } else {
+      console.error("Parent element not found");
+    }
+  }
+}
