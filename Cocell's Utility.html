@@ -1,0 +1,613 @@
+<style>
+  :root {
+    --font-color-black: #374151;
+    --font-color-white: #e6e8ec;
+    /* Background Type Colors */
+    --bgDark: #161618;
+    --ct-bg: #ced4e595;
+    --ct-bg-alt: #dbe2ffc5;
+    /* Gradient Type Colors */
+    --ct-bg-dark: linear-gradient(160deg, #1d1d1d, #18181a, #141420);
+    --ct-bg-dark-alt: linear-gradient(160deg, #505053, #2d2d31, #0e0e1a);
+    /* Accent Type Colors */
+    --light-gray-accent: #d3dade;
+    --light-gray-accent-mono: #B6C1C8;
+    --dark-gray-accent: #3C4347;
+    --dark-gray-accent-mono: #535D63;
+    /* ***Colors*** */
+    /* Gray */
+    --light-gray: #e3e3e3;
+    --light-lighter-gray: #f0f0f0;
+    --gray-50: #f7f7f8;
+    --gray-100: #ececf1;
+    --gray-200: #d9d9e3;
+    --gray-300: #c5c5d2;
+    --gray-400: #acacbe;
+    --gray-500: #999;
+    --gray-600: #666;
+    --gray-700: #40414f;
+    --gray-800: #343541;
+    --gray-900: #202123;
+    --gray-950: #0f0f0f;
+    /* Blue */
+    --blue-light: #99c2ff;
+    --blue-lighter: #b3d9ff;
+    --blue-50: #cce0ff;
+    --blue-100: #80aaff;
+    --blue-200: #6699ff;
+    --blue-300: #4d88ff;
+    --blue-400: #3366ff;
+    --blue-500: #1a45ff;
+    --blue-600: #0033cc;
+    --blue-700: #002b99;
+    --blue-800: #002266;
+    --blue-900: #001933;
+    --blue-950: #000f66;
+    --blue: #0050ff;
+    --blue-2: #0476FF;
+    --lowsec-light-blue: #8dc6ff;
+    --lowsec-blue: #5AADFF;
+    /* Red */
+    --red-light: #ff9999;
+    --red-lighter: #ffcccc;
+    --red-50: #ffe6e6;
+    --red-100: #ff6666;
+    --red-200: #ff4d4d;
+    --red-300: #ff3333;
+    --red-400: #ff1a1a;
+    --red-500: #ff0000;
+    --red-600: #cc0000;
+    --red-700: #990000;
+    --red-800: #660000;
+    --red-900: #330000;
+    --red-950: #660f0f;
+    /* Orange */
+    --orange-light: #ffcc99;
+    --orange-lighter: #ffd9b3;
+    --orange-50: #ffe6cc;
+    --orange-100: #ffaa80;
+    --orange-200: #ff9966;
+    --orange-300: #ff884d;
+    --orange-400: #ff6633;
+    --orange-500: #ff5500;
+    --orange-600: #cc4400;
+    --orange-700: #993300;
+    --orange-800: #662200;
+    --orange-900: #331100;
+    --orange-950: #663f00;
+
+    /*
+    *** Feel free to ignore these, I was just talking to someone on discord and had to write here,
+    But decided to keep it here. **
+    
+    Well, what I am doing is set up re-usable codes that I can use to make consistent website )
+    I might be able to earn money online after I learn to code well and get a credit card
+    But I do have a job, so... Its not urgent
+    I mean, I can do other things too, but I am more into tech so I am going with it
+    > ***Courage is not sole strength, courage is the strngth to move on when you dont have the strength to do so*** - Cocell
+    Yeah thats right, coding is not my goal for money, coding is my hobby and passion
+    And my job is something I took as an opportunity to learn from
+    https://tenor.com/view/naruto-naruto-uzumaki-ninja-anime-punch-gif-16891388
+    */
+  }
+  
+  * {
+    transition: padding, border-radius, white-space, display, position, height, width, margin, gap, font-size;
+    transition-duration: 0.5s;
+  }
+  
+  *:focus {
+    outline: none;
+  }
+  
+  body::-webkit-scrollbar {
+    background: none;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: inherit;
+  }
+
+  ::-webkit-scrollbar {
+      width: 10px;
+      background: none;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+      background: var(--light-gray-accent);
+      border-radius: 10px;
+  }
+  
+  .dark::-webkit-scrollbar-thumb {
+      background: var(--dark-gray-accent);
+      border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+      background: var(--light-gray-accent-mono);
+  }
+  
+  .dark::-webkit-scrollbar-thumb:hover {
+      background: var(--dark-gray-accent-mono);
+  }
+
+  /* Button */
+  ::-webkit-scrollbar-button {
+      display: none;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+      background: transparent;
+  }
+
+  /* Track piece */
+  ::-webkit-scrollbar-track-piece {
+      background: transparent;
+  }
+
+  /* Handle on scrollbar handle */
+  ::-webkit-scrollbar-corner {
+      background: transparent;
+  }
+
+  @media (max-width: 800px) {
+      body::-webkit-scrollbar {
+          display: none;
+          width: 5px;
+      }
+
+      main::-webkit-scrollbar {
+          display: none;
+          width: 5px;
+      }
+
+      ::-webkit-scrollbar {
+          width: 5px;
+      }
+  }
+
+  @media (max-width: 300px) {
+      body::-webkit-scrollbar {
+          width: 2px;
+      }
+
+
+      main::-webkit-scrollbar {
+          width: 2px;
+      }
+
+      ::-webkit-scrollbar {
+          width: 2px;
+      }
+  }
+  
+  /*
+  *** Short-hands ***
+  These are shorthands, quick classes to add one drop styles
+  */  
+  .transBg {
+    background: transparent;
+  }
+  
+  .fullHeight {
+    height: 100%;
+  }
+  
+  .overHidden {
+    overflow: hidden;
+  }
+  
+  .dispNone {
+    display: none;
+  }
+  
+  .round1 {
+    border-radius: 1rem;
+  }
+  
+  .round08 {
+    border-radius: 0.8rem;
+  }
+  
+  .round05 {
+    border-radius: 0.5rem;
+  }
+  
+  .gap20 {
+    gap: 20px;
+  }
+  
+  .gap10 {
+    gap: 10px;
+  }
+  
+  .gap8 {
+    gap: 8px;
+  }
+  
+  .gap5 {
+    gap: 5px;
+  }
+  
+  .pad20 {
+    padding: 20px;
+  }
+  
+  .pad10 {
+    padding: 10px;
+  }
+  
+  .pad8 {
+    padding: 8px;
+  }
+  
+  .pad5 {
+    padding: 5px;
+  }
+  
+  .flexR {
+    display: flex;
+  }
+  
+  .flexC {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blocked {
+    display: block;
+  }
+  
+  
+  /*
+  *** Dynamic Shorthands ***
+  These are dynamic shorthands, they are handled by media queris below.
+  They are identified and made unique by the prefix `d-` to target them differently than previous shorthands.
+  */
+  .d-round1 {
+    border-radius: 1rem;
+  }
+  
+  .d-round08 {
+    border-radius: 0.8rem;
+  }
+  
+  .d-round05 {
+    border-radius: 0.5rem;
+  }
+  
+  .d-gap20 {
+    gap: 20px;
+  }
+  
+  .d-gap10 {
+    gap: 10px;
+  }
+  
+  .d-gap8 {
+    gap: 8px;
+  }
+  
+  .d-gap5 {
+    gap: 5px;
+  }
+  
+  .d-pad20 {
+    padding: 20px;
+  }
+  
+  .d-pad10 {
+    padding: 10px;
+  }
+  
+  .d-pad8 {
+    padding: 8px;
+  }
+  
+  .d-pad5 {
+    padding: 5px;
+  }
+  
+  @media (max-width: 800px) {
+    .d-round1 {
+      border-radius: 0.5rem;
+    }
+
+    .d-round08 {
+      border-radius: 0.4rem;
+    }
+
+    .d-round05 {
+      border-radius: 0.25rem;
+    }
+
+    .d-gap20 {
+      gap: 10px;
+    }
+
+    .d-gap10 {
+      gap: 5px;
+    }
+
+    .d-gap8 {
+      gap: 4px;
+    }
+
+    .d-gap5 {
+      gap: 2.5px;
+    }
+
+    .d-pad20 {
+      padding: 10px;
+    }
+
+    .d-pad10 {
+      padding: 5px;
+    }
+
+    .d-pad8 {
+      padding: 4px;
+    }
+
+    .d-pad5 {
+      padding: 2.5px;
+    }
+  }
+  
+  @media (max-width: 300px) {
+    .d-round1 {
+      border-radius: 0;
+    }
+
+    .d-round08 {
+      border-radius: 0;
+    }
+
+    .d-round05 {
+      border-radius: 0;
+    }
+
+    .d-gap20 {
+      gap: 5px;
+    }
+
+    .d-gap10 {
+      gap: 2.5px;
+    }
+
+    .d-gap8 {
+      gap: 2px;
+    }
+
+    .d-gap5 {
+      gap: 1.25px;
+    }
+
+    .d-pad20 {
+      padding: 5px;
+    }
+
+    .d-pad10 {
+      padding: 2.5px;
+    }
+
+    .d-pad8 {
+      padding: 2px;
+    }
+
+    .d-pad5 {
+      padding: 1.25px;
+    }
+  }
+  
+  /* Perchance elements */
+  .___perchance-comments-plugin-iframe-12345 {
+    margin-bottom: -4px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* HTML elements */
+  html {
+    font-family: system-ui, Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.75;
+    font-size: 16px;
+    text-stroke: 0.3px var(--font-color-black);
+    -webkit-text-stroke: 0.3px var(--font-color-black);
+    color: var(--font-color-black);
+  }
+  
+  body {
+    margin: 0;
+    background: white;
+    height: 100%;
+  }
+  
+  iframe {
+    border: none;
+  }
+    
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  button {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 5px;
+    user-select: none;
+    cursor: pointer;
+    background: var(--light-gray-accent);
+    line-height: 1;
+  }
+  
+  button:active {
+    background: var(--light-gray-accent-mono);
+  }
+  
+  .dark button {
+    background: var(--dark-gray-accent);
+  }
+  
+  .dark button:active {
+    background: var(--dark-gray-accent-mono);
+  }
+  
+  /* All types of `.dark` classes */
+  .dark {
+    background: var(--bgDark);
+    color: var(--font-color-white);
+    text-stroke: 0.3px var(--font-color-white);
+    -webkit-text-stroke: 0.3px var(--font-color-white);
+  }
+</style>
+<style>
+  .dragElWind {
+    background: #16191f;
+    position: relative;
+    overflow: auto;
+    z-index: 1;
+    display: flex;
+    transition: width 0s, height 0s;
+    flex-direction: column;
+  }
+  
+  .dragElHeader {
+    cursor: move;
+    background-color: var(--lowsec-blue);
+    padding: 10px;
+  }
+  
+  .dragElMain {
+    height: 95%;
+  }
+</style>
+
+<style>
+  .cc-accordian-ct {
+    border: 2px solid gray;
+    border-radius: 1rem;
+    overflow: hidden;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .cc-accordian-head {
+    padding: 10px;
+    background: #e7ebed;
+  }
+  
+  .cc-accordian-body {
+    padding: 10px;
+    background: #f0f3f4;
+  }
+  
+  body {
+    max-height: 100%;
+  }
+
+  main {
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+
+  .left-column {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    background: var(--light-lighter-gray);
+  }
+
+  .right-column {
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column-head {
+    background: var(--light-gray);
+  }
+
+  .column-body {
+    height: 100%;
+    overflow: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .bottom-column-body {
+    height: 100px;
+    background: var(--light-gray);
+  }
+
+  @media (max-width: 800px) {
+    .left-column {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+</style>
+
+<main>
+  <div class="left-column" id="leftColumn">
+    <div class="column-head d-pad10">Left Column Head</div>
+    <div class="column-body">
+      <!-- Tabs List >>> -->
+      <div class="tabsCtn d-pad10">
+        <div class="tabs tablink openedTab" onclick="tabFunc(event, 'Home'), leftColumnTab()">
+          <div class="icon"><i class="fa-solid fa-dice-five"></i></div>
+          <div class="tabText">Home</div>
+        </div>
+      </div>
+
+      <div class="tabsCtn d-pad10">
+        <div class="tabs tablink openedTab" onclick="tabFunc(event, 'NotHome'), leftColumnTab()">
+          <div class="icon"><i class="fa-solid fa-dice-five"></i></div>
+          <div class="tabText">Not Home</div>
+        </div>
+      </div>
+      <!-- Tabs List <<< -->
+    </div>
+    <div class="bottom-column-body d-pad10">Left Column Bottom Body</div>
+  </div>
+  <div class="right-column">
+    <div class="column-head d-pad10">
+      <button onclick="showEl('leftColumn', 'flex')">Tabs</button>
+      Right Column Head
+    </div>
+    <div class="column-body d-pad10">
+      <div id="Home" class="tabWindow">Home</div>
+      <div id="NotHome" class="tabWindow dispNone">Not Home</div>
+    </div>
+  </div>
+</main>
+<script>
+function leftColumnTab() {
+  if (window.innerWidth <= 800) {
+    var leftColumnElement = document.getElementById("leftColumn");
+    if (leftColumnElement) {
+      leftColumnElement.style.display = "none";
+    }
+  }
+}
+</script>
+<script src="https://cocell0.github.io/Perchance/cocells_utility.js"></script>
