@@ -227,7 +227,7 @@ function fullscreen() {
     }
 }
 
-function openImageModal() {
+function modalImage() {
   var modalImages = document.querySelectorAll('.modal-image');
 
   modalImages.forEach(function(modalImage) {
@@ -310,7 +310,6 @@ function openImageModal() {
         modalContainer.style.transform = 'scale(0)';
         setTimeout(function() {
           backgroundContainer.style.display = 'none';
-          // Remove the modal elements when the background is clicked or Escape key is pressed
           document.body.removeChild(backgroundContainer);
         }, 300);
 
@@ -320,9 +319,6 @@ function openImageModal() {
     });
   });
 }
-
-// Call the function to set up modal functionality
-openImageModal();
 
 
 function processReadMoreElements() {
@@ -373,7 +369,7 @@ function processReadMoreElements() {
     });
 }
 
-processReadMoreElements();
+
 
 
 // Copy Text OnClick Function
@@ -450,3 +446,9 @@ function showEl(elementId, displayValue = 'block') {
 
   element.style.display = displayValue;
 }
+
+
+
+// Function Calls
+modalImage();
+processReadMoreElements();
